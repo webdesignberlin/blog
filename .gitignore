@@ -43,6 +43,7 @@ build/
 # individual ignores
 web/assets/cache
 node_modules/
+.sass-cache/
 # package.json
 # bower.json
 # Gruntfile.js
