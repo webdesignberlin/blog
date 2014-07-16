@@ -1,0 +1,15 @@
+{
+  "name": "matze-blog",
+  "version": "1.0.0",
+  "authors": [
+    "Michael Gerstmann <mg@bytepark.de>"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

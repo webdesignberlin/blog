@@ -1,0 +1,51 @@
+#unix
+*.log
+*~
+.ssh/*
+
+# puppet
+.puppet/bootstrap.sh
+.puppet/graphs
+.puppet/modules
+
+# phpstorm
+.idea/*
+workspace.xml
+
+#win
+thumbs.db
+
+#macos
+.DS_Store
+
+# eclipse
+.project
+.project/*
+.buildpath
+.buildpath/*
+.settings
+.settings/*
+.externalToolBuilders
+.externalToolBuilders/*
+.idea*
+
+# php storm
+.idea
+.idea/*
+
+# CI / Jenkins / Vagrant
+build/
+.vagrant
+.idea
+.idea/
+.devbase
+
+# individual ignores
+web/assets/cache
+node_modules/
+# package.json
+# bower.json
+# Gruntfile.js
+
+!.gitignore
+!empty

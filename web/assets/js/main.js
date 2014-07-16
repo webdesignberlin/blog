@@ -1,0 +1,1 @@
+$(document).ready(function(){function a(){0==$(".collapse").length||($.getScript("/assets/js/modules/transition.min.js"),$.getScript("/assets/js/modules/collapse.min.js",function(){}))}a()});
