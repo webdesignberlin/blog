@@ -1,0 +1,14 @@
+{
+  "name": "prism",
+  "_cacheHeaders": {
+    "ETag": "\"1a5324f02f4604b898cc5d58c270141b\"",
+    "Content-Length": "58389",
+    "Content-Type": "text/html; charset=utf-8"
+  },
+  "_release": "e-tag:1a5324f02",
+  "main": "index",
+  "_source": "https://github.com/LeaVerou/prism",
+  "_target": "*",
+  "_originalSource": "https://github.com/LeaVerou/prism",
+  "_direct": true
+}
