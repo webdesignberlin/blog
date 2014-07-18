@@ -13,6 +13,6 @@
     "tests"
   ],
   "devDependencies": {
-    "prism": "https://github.com/LeaVerou/prism"
+    "prism": "gh-pages"
   }
 }
