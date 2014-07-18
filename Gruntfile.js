@@ -23,7 +23,8 @@ module.exports = function(grunt) {
               {expand: true, flatten: true, src: ['bower_components/prism/plugins/line-numbers/prism-line-numbers.js'], dest: '<%= globalConfig.src %>/js/modules/prism/plugins/line-numbers/', filter: 'isFile'},
               
               {expand: true, flatten: true, src: ['bower_components/prism/themes/prism.css'], dest: '<%= globalConfig.src %>/css/modules/prism/', filter: 'isFile'},
-              {expand: true, flatten: true, src: ['bower_components/prism/plugins/line-numbers/prism-line-numbers.css'], dest: '<%= globalConfig.src %>/css/modules/prism/plugins/line-numbers/', filter: 'isFile'}
+              {expand: true, flatten: true, src: ['bower_components/prism/plugins/line-numbers/prism-line-numbers.css'], dest: '<%= globalConfig.src %>/css/modules/prism/plugins/line-numbers/', filter: 'isFile'},
+              {expand: true, flatten: true, src: ['bower_components/prism/themes/prism-okaidia.css'], dest: '<%= globalConfig.src %>/css/modules/prism/', filter: 'isFile'}
         
               // includes files within path and its sub-directories
               //{expand: true, src: ['path/**'], dest: 'dest/'},
@@ -57,6 +58,7 @@ module.exports = function(grunt) {
             css: {
               src: [
                 '<%= globalConfig.src %>/css/modules/prism/prism.css',
+                '<%= globalConfig.src %>/css/modules/prism/prism-okaidia.css',
                 '<%= globalConfig.src %>/css/modules/prism/plugins/line-numbers/prism-line-numbers.css',
                 '<%= globalConfig.src %>/css/styles.temp.css'
               ],
@@ -109,7 +111,7 @@ module.exports = function(grunt) {
                     '<%= globalConfig.src %>/js/*.js',
                     '<%= globalConfig.src %>/js/modules/*.js'
                 ],
-                tasks : ['copy', 'sass', 'cssmin', 'uglify']
+                tasks : ['copy', 'sass', 'concat', 'cssmin', 'uglify']
             }
         },
         browser_sync: {
