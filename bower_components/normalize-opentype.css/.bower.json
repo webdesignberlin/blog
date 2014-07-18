@@ -1,6 +1,6 @@
 {
   "name": "normalize-opentype.css",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "http://kennethormandy.com/journal/normalize-opentype-css",
   "authors": [
     "Kenneth Ormandy <kenneth@chloi.io>"
@@ -23,14 +23,13 @@
     "components",
     "test"
   ],
-  "_release": "0.1.1",
+  "_release": "0.1.2",
   "_resolution": {
     "type": "version",
-    "tag": "v0.1.1",
-    "commit": "5a1e97388d6a02f50fcb8faf5c22f01e570ea661"
+    "tag": "v0.1.2",
+    "commit": "d2eb5ba3e0a511e9bac422940cc3f1f64b8a4b61"
   },
   "_source": "git://github.com/kennethormandy/normalize-opentype.css.git",
   "_target": "~0.1.1",
-  "_originalSource": "normalize-opentype.css",
-  "_direct": true
+  "_originalSource": "normalize-opentype.css"
 }

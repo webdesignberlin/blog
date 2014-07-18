@@ -1,54 +1,58 @@
-[![Normalize-OpenType.css wordmark](wordmark.png)](http://kennethormandy.com/journal/normalize-opentype-css)
+[![Normalize-OpenType.css wordmark](assets/wordmark.png)](http://kennethormandy.com/journal/normalize-opentype-css)
 
 ***
 
 # Normalize-OpenType.css
 
-Adds OpenType features—ligatures, kerning, and more—to [Normalize.css](https://github/necolas/normalize.css).
+Adds OpenType features—ligatures, kerning, and more—to [Normalize.css](https://github.com/necolas/normalize.css).
 
 Read the blog post: [Introducing Normalize-OpenType.css](http://kennethormandy.com/journal/normalize-opentype-css)
+
+[<img alt="Get the latest version of the CSS file" src="assets/download.png" width="150px" />](https://raw.githubusercontent.com/kennethormandy/normalize-opentype.css/master/normalize-opentype.css)
+
+_Or use_
+
+```bash
+npm install kennethormandy/normalize-opentype.css
+```
 
 ## Ligatures
 
 First, normalize basic ligatures across browsers, and then get fancier, discretionary ligatures on `<h1>`, `<h2>`, and `<h3>`s.
 
-![An example of basic and discretionary ligatures.](examples/example-1.png)
+![An example of basic and discretionary ligatures.](assets/example-1.png)
 
 ## Numerals
 
 Different situations require different numerals, depending on the context. Normalize-OpenType.css takes care of this for you, so you don’t need to know what combination of Proportional, Lining, Tabular, and Old-Style numerals you need to use.
 
-![An example of old-style, proportional numerals.](examples/example-2.png)
+![An example of old-style, proportional numerals.](assets/example-2.png)
 
-![An example of tabular, lining numerals.](examples/example-3.png)
+![An example of tabular, lining numerals.](assets/example-3.png)
 
 ## Small Capitals
 
 Regular capitals draw a lot of attention in body copy. With Normalize-OpenType.css, anything wrapped in `<abbr>` will use small capitals instead. This works especially well with [Typogr.js](https://github.com/ekalinin/typogr.js) and equivalents.
 
-![An example of small capitals.](examples/example-4.png)
+![An example of small capitals.](assets/example-4.png)
 
 ## Kerning
 
 Kerning is turned on by default everywhere, and carefully turned off where it isn’t appropriate. A monospaced typeface’s application is ruined when automatic kerning is turned on. This is not the case with Normalize-OpenType.css; your code blocks have been preserved.
 
-![A kerning example.](examples/example-5.png)
+![A kerning example.](assets/example-5.png)
 
 ## …and more
 
 There’s more optimisations included, so you don’t have to think about them: Lining, tabular numerals in code blocks, uppercase fallbacks for small capitals, and proper subscript and superscripts.
 
-## Caveats
-
-This library does the best it can with what it has. In order to use any of these optimisations, they must also be available in the font you are using.
-
-There are some potential stumbling blocks depending on where you are serving fonts from. For more details, see [the introductory blog post](http://kennethormandy.com/journal/normalize-opentype-css).
-
 ## Getting started
 
-Normalize-OpenType.css aims to be as easy to use as its namesake: [get the latest version of the CSS file](https://raw.githubusercontent.com/kennethormandy/normalize-opentype.css/master/normalize-opentype.css) or use the package manager of your choice, include the CSS file, and you’re done.
+Normalize-OpenType.css aims to be as easy to use as its namesake, Normalize.css. If it’s not that easy, please [open an issue](https://github.com/kennethormandy/normalize-opentype.css/issues). Get the latest version of the CSS file here:
 
-If it’s not that easy, please [open an issue](https://github.com/kennethormandy/normalize-opentype.css/issues).
+[<img alt="Get the latest version of the CSS file" src="assets/download.png" width="150px" />](https://raw.githubusercontent.com/kennethormandy/normalize-opentype.css/master/normalize-opentype.css)
+
+Alternatively, use the package manager and build tool of your choice:
 
 #### With npm
 
@@ -83,6 +87,14 @@ If you’re using a preprocessor through something like [Harp](http://harpjs.com
 @import "normalize";
 @import "normalize-opentype";
 ```
+
+### Caveats
+
+This library does the best it can with what it has. In order to use any of these optimisations, they must also be available in the font you are using.
+
+I’m working on some blog posts and documentation about this, and will be [sending them out via email](http://kennethormandy.com/journal/newsletter) if you’re interested.
+
+There’s also a bug in Open Sans on Windows 7, with IE10 and 11, that’s caused by `font-feature-settings`, which this stylesheet uses heavily. [We’re keeping an eye on it.](https://github.com/kennethormandy/normalize-opentype.css/issues/4)
 
 ## Running locally
 
