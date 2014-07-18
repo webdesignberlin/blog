@@ -18,6 +18,12 @@ module.exports = function(grunt) {
             files: [
               // includes files within path
               {expand: true, src: ['bower_components/normalize-opentype.css/normalize-opentype.scss'], dest: '<%= globalConfig.src %>/css/', filter: 'isFile'},
+              // copy Prism and Plugins to <%= globalConfig.src %>
+              {expand: true, flatten: true, src: ['bower_components/prism/prism.js'], dest: '<%= globalConfig.src %>/js/modules/prism/', filter: 'isFile'},
+              {expand: true, flatten: true, src: ['bower_components/prism/plugins/line-numbers/prism-line-numbers.js'], dest: '<%= globalConfig.src %>/js/modules/prism/plugins/line-numbers/', filter: 'isFile'},
+              
+              {expand: true, flatten: true, src: ['bower_components/prism/themes/prism.css'], dest: '<%= globalConfig.src %>/css/modules/prism/', filter: 'isFile'},
+              {expand: true, flatten: true, src: ['bower_components/prism/plugins/line-numbers/prism-line-numbers.css'], dest: '<%= globalConfig.src %>/css/modules/prism/plugins/line-numbers/', filter: 'isFile'}
         
               // includes files within path and its sub-directories
               //{expand: true, src: ['path/**'], dest: 'dest/'},
@@ -34,15 +40,15 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 options : {
-                    precision : 10,
-                    style: 'compressed'
+                    precision : 10/*,
+                    style: 'compressed'*/
                 },
                 files: [{
                     expand : true,
                     cwd : '<%= globalConfig.src %>/css/',
                     src : ['*.scss'],
-                    dest : '<%= globalConfig.dest %>/css/',
-                    ext : '.min.css'
+                    dest : '<%= globalConfig.src %>/css/',
+                    ext : '.temp.css'
                 }]
             }
         },
@@ -50,10 +56,11 @@ module.exports = function(grunt) {
         concat: {
             css: {
               src: [
-                '<%= globalConfig.src %>/css/*',
-                '<%= globalConfig.src %>/css/**/*'
+                '<%= globalConfig.src %>/css/modules/prism/prism.css',
+                '<%= globalConfig.src %>/css/modules/prism/plugins/line-numbers/prism-line-numbers.css',
+                '<%= globalConfig.src %>/css/styles.temp.css'
               ],
-              dest: '<%= globalConfig.src %>/css/combine.css'
+              dest: '<%= globalConfig.src %>/css/combine.temp.css'
             },
     
             js: {
@@ -61,9 +68,11 @@ module.exports = function(grunt) {
                 separator: ';',
               },
               src: [
-                '<%= globalConfig.src %>/js/*.js'
+                '<%= globalConfig.src %>/js/modules/prism/prism.js',
+                '<%= globalConfig.src %>/js/modules/prism/plugins/line-numbers/prism-line-numbers.js',
+                '<%= globalConfig.src %>/js/main.js'
               ],
-              dest: '<%= globalConfig.dest %>/js/main.js'
+              dest: '<%= globalConfig.src %>/js/combine.js'
             }
         },
 		
@@ -71,7 +80,8 @@ module.exports = function(grunt) {
             minify: {
                 expand : true,
                 cwd : '<%= globalConfig.src %>/css/',
-                src : ['*.css'],
+                //src : ['*.css'],
+                src : ['combine.temp.css'],
                 dest : '<%= globalConfig.dest %>/css/',
                 ext : '.min.css',
                 options : {
@@ -84,8 +94,10 @@ module.exports = function(grunt) {
               files: [{
                   expand: true,
                   cwd: '<%= globalConfig.src %>/js',
-                  src: '**/*.js',
-                  dest: '<%= globalConfig.dest %>/js'
+                  //src: '**/*.js',
+                  src: 'combine.js',
+                  dest: '<%= globalConfig.dest %>/js',
+                  ext : '.min.js'
               }]
             }
         },
@@ -138,6 +150,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
 
     // Tasks
-    grunt.registerTask('default', ['copy', 'sass', 'cssmin', 'uglify']);
+    grunt.registerTask('default', ['copy', 'sass', 'concat', 'cssmin', 'uglify']);
     grunt.registerTask('sync', ['browser_sync', 'watch']);
 };
