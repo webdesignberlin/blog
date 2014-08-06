@@ -17,6 +17,16 @@ thumbs.db
 
 #macos
 .DS_Store
+._.DS.Store
+.AppleDouble
+.LSOverride
+Icon
+# ._*
+.Spotlight-V100
+.Trashes
+
+# Devbase
+.devbase
 
 # eclipse
 .project
@@ -40,13 +50,21 @@ build/
 .idea/
 .devbase
 
-# individual ignores
-web/assets/cache
+#grunt
 node_modules/
+bower_components/
 .sass-cache/
-# package.json
-# bower.json
-# Gruntfile.js
+
+# IDE files
+*.sublime-workspace
+*.sublime-project
+*.esproj
+*.bak
+_notes
+dwsync.xml
+.idea_modules/
+
+# individual ignores
 
 !.gitignore
 !empty
