@@ -1,19 +1,14 @@
+# project related
+web/assets-temp
+
 #unix
 *.log
 *~
 .ssh/*
 
-# puppet
-.puppet/bootstrap.sh
-.puppet/graphs
-.puppet/modules
-
-# phpstorm
-.idea/*
-workspace.xml
-
 #win
 thumbs.db
+Thumbs.db
 
 #macos
 .DS_Store
@@ -28,6 +23,10 @@ Icon
 # Devbase
 .devbase
 
+# CI / Jenkins / Vagrant
+build/*
+.vagrant
+
 # eclipse
 .project
 .project/*
@@ -37,23 +36,104 @@ Icon
 .settings/*
 .externalToolBuilders
 .externalToolBuilders/*
-.idea*
 
-# php storm
+# PHPStorm
 .idea
 .idea/*
 
-# CI / Jenkins / Vagrant
-build/
-.vagrant
-.idea
-.idea/
-.devbase
+#redaxo
+web/rxadmin/include/generated/articles/*
+web/rxadmin/include/generated/files/*
+web/rxadmin/include/generated/templates/*
+
+#symfony
+log/*
+cache/*
+web/*Plugin
+web/doc
+doc/api/*
+doc/coverage/*
+doc/agile.html
+
+#symfony 2.x
+web/bundles/
+app/bootstrap*
+app/cache/*
+app/logs/*
+vendor/
+app/config/parameters.ini
+composer.lock
+
+#zend
+# nothing yet
 
 #grunt
 node_modules/
 bower_components/
 .sass-cache/
+
+#typo3
+web/typo3temp/*
+web/log.txt
+
+# magento
+web/var/cache/
+web/var/locks/
+web/var/report/
+web/var/session/
+web/var/log/
+web/var/import/
+web/var/export/
+web/var/backups/
+web/app/etc/local.xml
+web/media/catalog/product/cache
+web/downloader/
+web/.thumbs/
+web/Thumbs.db
+web/media/js
+web/media/css
+web/RELEASE_NOTES.txt
+web/LICENSE_AFL.txt
+web/LICENSE.txt
+web/LICENSE.html
+web/index.php.sample
+web/.htaccess.sample
+web/php.ini.sample
+web/magento-cleanup.php
+web/magento-check.php
+web/media/invoices/
+web/media/catalog/
+web/media/captcha/
+web/wysiwyg/
+web/wysiwyg/*
+web/media/wysiwyg/*
+web/profiler.flag
+web/var/importexport/*
+web/README
+
+# magento connect 2 cache directories and files
+web/downloader/cache.cfg
+web/downloader/connect.cfg
+web/downloader/.cache/
+web/cache.cfg
+web/pkginfo/*.txt
+web/var/package/*.xml
+web/var/package/tmp/
+
+# wordpress general
+web/license.txt
+web/liesmich.html
+web/readme.html
+web/wp-content/uploads/*
+web/wp-config.php
+web/sitemaps.xml
+web/sitemap.xml.gz
+web/wp-config-sample.php
+web/wp-content/themes/twentyten/
+
+# wordpress multisite
+web/wp-content/blogs.dir/*
+web/sitemaps/*
 
 # IDE files
 *.sublime-workspace
@@ -64,7 +144,6 @@ _notes
 dwsync.xml
 .idea_modules/
 
-# individual ignores
-
+# closure...
 !.gitignore
-!empty
+#!empty
