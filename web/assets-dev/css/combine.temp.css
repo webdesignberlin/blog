@@ -481,6 +481,20 @@ body {
   color: #121212; }
 
 h1,
+h1,
+h2,
+h2,
+h3,
+h3,
+h4,
+h4,
+h5,
+h5,
+h6,
+h6 {
+  position: relative; }
+
+h1,
 .h1 {
   margin: .6em 0 .6em 0;
   font-size: 26px;
@@ -531,8 +545,13 @@ h6,
   line-height: 1.8rem; }
 
 p,
-.table-container {
+.table-container,
+.content-main figure {
   margin: 0 0 1.4em 0; }
+
+figure img {
+  max-width: 100%;
+  height: auto; }
 
 pre + p {
   margin-top: 1.4em; }
@@ -554,6 +573,11 @@ em,
 i,
 q {
   font-style: italic; }
+
+sup {
+  vertical-align: top;
+  top: -0.5em;
+  position: relative; }
 
 dt {
   font-weight: 500;
@@ -720,7 +744,6 @@ table {
   position: relative;
   z-index: 1;
   /* needed for setting pseudo-element z-index */
-  overflow: hidden;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden; }
   .content a {
@@ -735,15 +758,15 @@ table {
     .content a:hover {
       color: #fff; }
 
-.content a::before,
-.content a::after {
+.content a:before,
+.content a:after {
   pointer-events: none;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased; }
 
-.content a::before {
+.content a:before {
   position: absolute;
   top: 0;
   left: 0;
@@ -757,12 +780,56 @@ table {
   -webkit-transform: translateY(95%);
   transform: translateY(95%); }
 
-.content a:hover::before,
-.content a:focus::before {
+.content a:hover:before,
+.content a:focus:before {
   -webkit-transform: translateY(0);
   transform: translateY(0); }
 
 /* = Article Links */
+/* + Article Links Reset */
+.content .link-reset {
+  overflow: visible;
+  padding: 0; }
+  .content .link-reset:hover {
+    color: inherit; }
+  .content .link-reset:before, .content .link-reset:after {
+    background: none;
+    position: relative;
+    width: auto;
+    height: auto;
+    z-index: auto;
+    transform: none;
+    -webkit-transform: none; }
+
+/* = Article Links Reset */
+/* + Anchor Links */
+.content .anchor:before {
+  content: '@';
+  display: inline-block;
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s;
+  padding-right: .5em; }
+.content .anchor:hover:before, .content .anchor:focus:before {
+  display: inline-block;
+  visibility: visible;
+  opacity: 1; }
+@media screen and (min-width: 42em) {
+  .content .anchor:before {
+    position: absolute;
+    top: 0;
+    left: auto;
+    right: 100%;
+    display: inline-block;
+    padding-bottom: 1em; } }
+
+.content :hover .anchor,
+.content :focus .anchor {
+  visibility: visible;
+  opacity: 1; }
+
+/* = Anchor Links */
 article {
   padding-top: 0.5em; }
   article .headline {
@@ -781,6 +848,13 @@ article {
 .content-main {
   padding-top: 1.2em; }
 
+.copyright {
+  color: #787878; }
+  .copyright:before {
+    content: "\00a0" attr(data-quote);
+    padding-left: .25em;
+    font-style: normal; }
+
 .post-meta-description li {
   list-style: none;
   display: inline-block;
@@ -790,6 +864,12 @@ article {
 
 /* + Code Styles */
 /*pre { background-color: #222; color: #fff; overflow: auto; padding: 2% 4%; }*/
+pre {
+  tab-size: 4;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  white-space: pre-wrap; }
+
 /* = Code Styles */
 /* = Styles höherer Ordnung (OOCSS – Nicht-modulspezifische oder modulübergreifende Styles) */
 /* + Modul Styles */

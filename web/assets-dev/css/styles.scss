@@ -39,6 +39,19 @@ html { font-size: 62.5%; }
 body { font-family: $standard-font; @include font-size(15); background-color: #f8f8f8; color: #121212; }
 
 h1,
+h1,
+h2,
+h2,
+h3,
+h3,
+h4,
+h4,
+h5,
+h5,
+h6,
+h6 { position:relative; }
+
+h1,
 .h1 { @extend .highlight-font; 
     margin: .6em 0 .6em 0; @include font-size(26); }
 h2,
@@ -59,7 +72,11 @@ h6,
 }
 
 p, 
-.table-container { margin: 0 0 1.4em 0; }
+.table-container,
+.content-main figure { margin: 0 0 1.4em 0; }
+
+figure img { max-width:100%; height:auto; }
+
 pre + p { margin-top:1.4em; }
 //p { @include font-size(13); }
 a { color: $primary-color; font-weight: 500;
@@ -75,6 +92,7 @@ cite,
 em, 
 i, 
 q { font-style: italic; }
+sup { vertical-align: top; top: -0.5em; position:relative; }
 
 dt { font-weight: 500; @include font-size(15); }
 
@@ -157,7 +175,7 @@ table { table-layout: fixed; border-collapse: collapse;
 .content {
 	position: relative;
 	z-index: 1; /* needed for setting pseudo-element z-index */
-	overflow: hidden;
+	//overflow: hidden;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
     
@@ -166,8 +184,8 @@ table { table-layout: fixed; border-collapse: collapse;
     }
 }
 
-.content a::before,
-.content a::after {
+.content a:before,
+.content a:after {
 	pointer-events: none;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
@@ -175,7 +193,7 @@ table { table-layout: fixed; border-collapse: collapse;
 	font-smoothing: antialiased;
 }
 
-.content a::before {
+.content a:before {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -190,12 +208,33 @@ table { table-layout: fixed; border-collapse: collapse;
 	transform: translateY(95%);
 }
 
-.content a:hover::before,
-.content a:focus::before {
+.content a:hover:before,
+.content a:focus:before {
 	-webkit-transform: translateY(0);
 	transform: translateY(0);
 }
 /* = Article Links */
+
+/* + Article Links Reset */
+.content .link-reset { overflow:visible; padding:0; 
+    &:hover { color:inherit; }
+    &:before,
+    &:after { background:none; position:relative; width:auto; height:auto; z-index:auto; transform:none; -webkit-transform:none; }
+}
+/* = Article Links Reset */
+
+/* + Anchor Links */
+.content .anchor { 
+    &:before { content:'@'; display:inline-block; display:none; visibility:hidden; opacity:0; transition: opacity 0.2s; padding-right:.5em; }
+    &:hover:before,
+    &:focus:before { display:inline-block; visibility:visible; opacity:1; }
+    @media screen and (min-width: 42em) {
+        &:before { position:absolute; top:0; left:auto; right:100%; display:inline-block; padding-bottom:1em; }
+    }
+}
+.content :hover .anchor,
+.content :focus .anchor{ visibility:visible; opacity:1; }
+/* = Anchor Links */
 
 article { padding-top: 0.5em; 
     .headline { margin-top: 0; color: $secondary-color; text-decoration: none; 
@@ -204,6 +243,9 @@ article { padding-top: 0.5em;
     }
 }
 .content-main { padding-top:1.2em; }
+.copyright { color: lighten($standard-color, 40%);
+    &:before { content:'\00a0' attr(data-quote); padding-left:.25em; font-style:normal; }
+}
 
 
 .post-meta-description {
@@ -213,6 +255,7 @@ article { padding-top: 0.5em;
 
 /* + Code Styles */
 /*pre { background-color: #222; color: #fff; overflow: auto; padding: 2% 4%; }*/
+pre { tab-size: 4; -moz-tab-size: 4; -o-tab-size: 4; white-space: pre-wrap;}
 /* = Code Styles */
 
 /* = Styles höherer Ordnung (OOCSS – Nicht-modulspezifische oder modulübergreifende Styles) */
