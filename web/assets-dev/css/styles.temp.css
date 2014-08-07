@@ -572,12 +572,35 @@ article {
     padding-left: .25em;
     font-style: normal; }
 
+/* + Btn Styles */
+.btn {
+  background: #e60e64;
+  color: #fff; }
+
+.btn.btn {
+  padding: 1em; }
+
+/* = Btn Styles */
 .post-meta-description li {
   list-style: none;
   display: inline-block;
   color: #787878; }
 .post-meta-description .tags {
   display: block; }
+
+footer {
+  margin-top: 1em; }
+
+.top {
+  padding: 1em;
+  float: right;
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 22.5px;
+  font-size: 1.5rem;
+  line-height: 2.25rem; }
+  .top:hover, .top:focus {
+    text-decoration: underline; }
 
 /* + Code Styles */
 /*pre { background-color: #222; color: #fff; overflow: auto; padding: 2% 4%; }*/

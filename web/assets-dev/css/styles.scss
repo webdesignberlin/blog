@@ -15,7 +15,7 @@
 /* + Variablen (Farben, Fonts, etc) */
 $standard-color: #121212;
 $primary-color: #00aff0;
-//$secondary-color: #e60e64;
+$highlight-color: #e60e64;
 $secondary-color: #7fba00;
 $standard-font: 'Ubuntu', Helvetica, Arial, sans-serif;
 $highlight-font: 'Domine', Georgia, Times, "Times New Roman", serif;
@@ -247,11 +247,24 @@ article { padding-top: 0.5em;
     &:before { content:'\00a0' attr(data-quote); padding-left:.25em; font-style:normal; }
 }
 
+/* + Btn Styles */
+.btn { background:$highlight-color; color:#fff;
+}
+.btn.btn { padding:1em; } // Overwrite .content a Styling
+
+/* = Btn Styles */
 
 .post-meta-description {
     li { list-style: none; display: inline-block; color: lighten($standard-color, 40%); }
     .tags { display: block; }
 }
+
+footer { margin-top:1em; }
+.top { padding:1em; float:right; text-decoration:none; @include font-size(15);
+    &:hover,
+    &:focus { text-decoration:underline; }
+}
+
 
 /* + Code Styles */
 /*pre { background-color: #222; color: #fff; overflow: auto; padding: 2% 4%; }*/
