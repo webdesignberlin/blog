@@ -41,8 +41,7 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 options : {
-                    precision : 10/*,
-                    style: 'compressed'*/
+                    precision : 10
                 },
                 files: [{
                     expand : true,
@@ -82,7 +81,6 @@ module.exports = function(grunt) {
             minify: {
                 expand : true,
                 cwd : '<%= globalConfig.src %>/css/',
-                //src : ['*.css'],
                 src : ['combine.temp.css'],
                 dest : '<%= globalConfig.dest %>/css/',
                 ext : '.min.css',
