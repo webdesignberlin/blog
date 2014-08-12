@@ -575,7 +575,13 @@ article {
 /* + Btn Styles */
 .btn {
   background: #e60e64;
-  color: #fff; }
+  color: #fff;
+  transition: background-color 0.3s ease 0s; }
+  .btn:hover, .btn:focus {
+    background-color: #00aff0;
+    color: #fff; }
+    .btn:hover.link-reset, .btn:focus.link-reset {
+      color: #fff; }
 
 .btn.btn {
   padding: 1em; }

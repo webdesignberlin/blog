@@ -248,7 +248,11 @@ article { padding-top: 0.5em;
 }
 
 /* + Btn Styles */
-.btn { background:$highlight-color; color:#fff;
+.btn { background:$highlight-color; color:#fff; transition: background-color 0.3s ease 0s; 
+    &:hover,
+    &:focus { background-color:$primary-color; color:#fff; 
+        &.link-reset { color:#fff;}
+    }
 }
 .btn.btn { padding:1em; } // Overwrite .content a Styling
 
