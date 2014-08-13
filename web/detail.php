@@ -26,72 +26,76 @@
         <p>For example, let’s say we have an API response:</p>
         <?php include('inc/_content-code.php'); ?>
         <p>If we want to use a chart or graphing library to compare the average temperature to population size, we’d need to write some JavaScript that makes a few changes to the data before it’s formatted correctly for our visualization. Our graphing library wants an array of x and y coordinates, like so:</p>
-        <pre><code class="language-javascript">[
-          [x, y],
-          [x, y]
-          …etc
-        ]
-        </code></pre>
-        <p>Here, <code>x</code> is the average temperature, and <code>y</code> is the population size.</p>
-        <p>Without functional programming (or without using what’s called an “imperative” style), our program might look like this:</p>
-        <pre><code class="language-javascript">var coords = [],
-            totalTemperature = 0,
-            averageTemperature = 0;
-
-        for (var i=0; i &lt; data.length; i++) {
-          totalTemperature = 0;
-
-          for (var j=0; j &lt; data[i].temperatures.length; j++) {
-            totalTemperature += data[i].temperatures[j];
-          }
-
-          averageTemperature = totalTemperature / data[i].temperatures.length;
-
-          coords.push([averageTemperature, data[i].population]);
-        }
-        </code></pre>
-        <p>Even in a contrived example, this is already becoming difficult to follow. Let’s see if we can do better.</p>
-        <p>When programming in a functional style, you’re always looking for simple, repeatable actions that can be abstracted out into a function. We can then build more complex features by calling these functions in sequence (also known as “composing” functions) — more on that in a second. In the meantime, let’s look at the steps we’d take in the process of transforming the initial API response to the structure required by our visualization library. At a basic level, we’ll perform the following actions on our data:</p>
-        <ul>
-        <li>add every number in a list,</li>
-        <li>calculate an average,</li>
-        <li>retrieve a single property from a list of objects.</li>
-        </ul>
-        <p>We’ll write a function for each of these three basic actions, then compose our program from those functions. Functional programming can be a little confusing at first, and you’ll probably be tempted to slip into old imperative habits. To avoid that, here are some simple ground rules to ensure that you’re following best practices:</p>
-        <ol>
-        <li>All of your functions must accept at least one argument.</li>
-        <li>All of your functions must return data or another function.</li>
-        <li>No loops!</li>
-        </ol>
-        <p>OK, let’s add every number in a list. Remembering the rules, let’s make sure that our function accepts an argument (the array of numbers to add) and returns some data.</p>
-        <pre><code class="language-javascript">function totalForArray(arr) {
-          // add everything
-          return total;  
-        }
-        </code></pre>
-        <p>So far so good. But how are we going to access every item in the list if we don’t loop over it? Say hello to your new friend, recursion! This is a bit tricky, but basically, when you use recursion, you create a function that calls itself unless a specific condition has been met — in which case, a value is returned. Just looking at an example is probably easiest:</p>
-        <pre><code class="language-javascript">// Notice we're accepting two values, the list and the current total
-        function totalForArray(currentTotal, arr) {
-
-          currentTotal += arr[0]; 
-
-          // Note to experienced JavaScript programmers, I'm not using Array.shift on 
-          // purpose because we're treating arrays as if they are immutable.
-          var remainingList = arr.slice(0,-1);
-
-          // This function calls itself with the remainder of the list, and the 
-          // current value of the currentTotal variable
-          if(remainingList.length &gt; 0) {
-            return totalForArray(currentTotal, remainingList); 
-          }
-
-          // Unless of course the list is empty, in which case we can just return
-          // the currentTotal value.
-          else {
-            return currentTotal;
-          }
-        }
-        </code></pre>
+        <h4>Tabelle</h4>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Col 1</th>
+                            <th>Col 2</th>
+                            <th>Col 3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Content Col 1</td>
+                            <td>Content Col 2</td>
+                            <td>Content Col 3</td>
+                        </tr>
+                        <tr>
+                            <td>Content Col 1</td>
+                            <td>Content Col 2</td>
+                            <td>Content Col 3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h4>Lange Tabelle</h4>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Col 1</th>
+                            <th>Col 2</th>
+                            <th>Col 3</th>
+                            <th>Col 4</th>
+                            <th>Col 5</th>
+                            <th>Col 6</th>
+                            <th>Col 7</th>
+                            <th>Col 8</th>
+                            <th>Col 9</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Content Col 1</td>
+                            <td>Content Col 2</td>
+                            <td>Content Col 3</td>
+                            <td>Content Col 1</td>
+                            <td>Content Col 2</td>
+                            <td>Content Col 3</td>
+                            <td>Content Col 1</td>
+                            <td>Content Col 2</td>
+                            <td>Content Col 3</td>
+                        </tr>
+                        <tr>
+                            <td>Content Col 1</td>
+                            <td>Content Col 2</td>
+                            <td>Content Col 3</td>
+                            <td>Content Col 1</td>
+                            <td>Content Col 2</td>
+                            <td>Content Col 3</td>
+                            <td>Content Col 1</td>
+                            <td>Content Col 2</td>
+                            <td>Content Col 3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Responsive Video</p>
+            <div class='embed-container'>
+                <iframe src='http://www.youtube.com/embed/QILiHiTD3uc' frameborder='0' allowfullscreen></iframe>
+            </div>
         <p><strong>A word of caution:</strong> Recursion will make your programs more readable, and it is essential to programming in a functional style. However, in some languages (including JavaScript), you’ll run into problems when your program makes a large number of recursive calls in a single operation (at the time of writing, “large” is about <a href="http://www.2ality.com/2014/04/call-stack-size.html">10,000 calls in Chrome, 50,000 in Firefox and 11,000 in Node.js</a><sup class="print_only" id="note-12"><a href="#12">12</a></sup>). The details are beyond the scope of this article, but the gist is that, at least <a href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-tail-position-calls">until ECMAScript 6 is released</a><sup class="print_only" id="note-13"><a href="#13">13</a></sup>, JavaScript doesn’t support something called “<a href="http://cs.stackexchange.com/a/7814">tail recursion</a><sup class="print_only" id="note-14"><a href="#14">14</a></sup>,” which is a more efficient form of recursion. This is an advanced topic and won’t come up very often, but it’s worth knowing.</p>
         <p>With that out of the way, remember that we needed to calculate the total temperature from an array of temperatures in order to then calculate the average. Now, instead of looping over each item in the <code>temperatures</code> array, we can simply write this:</p>
         <pre><code class="language-javascript">var totalTemp = totalForArray(0, temperatures);
