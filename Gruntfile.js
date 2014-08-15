@@ -44,23 +44,46 @@ module.exports = function(grunt) {
             },
             opentype: {
                 // includes files within path
-                expand: true, src: ['bower_components/normalize-opentype.css/normalize-opentype.scss'], dest: '<%= globalConfig.src %>/css/', filter: 'isFile'
+                expand: true, 
+                src: ['bower_components/normalize-opentype.css/normalize-opentype.scss'], 
+                dest: '<%= globalConfig.src %>/css/', 
+                filter: 'isFile'
             },
             // Prism and Plugins
             prismJs: {
-                    expand: true, flatten: true, src: ['bower_components/prism/prism.js'], dest: '<%= globalConfig.src %>/js/modules/prism/', filter: 'isFile'  
+                    expand: true, 
+                    flatten: true, 
+                    src: ['bower_components/prism/prism.js'], 
+                    dest: '<%= globalConfig.src %>/js/modules/prism/', 
+                    filter: 'isFile'  
             },
             prismJsPlugin: {
-                    expand: true, flatten: true, src: ['bower_components/prism/plugins/line-numbers/prism-line-numbers.js'], dest: '<%= globalConfig.src %>/js/modules/prism/plugins/line-numbers/', filter: 'isFile'    
+                    expand: true, 
+                    flatten: true, 
+                    src: ['bower_components/prism/plugins/line-numbers/prism-line-numbers.js'], 
+                    dest: '<%= globalConfig.src %>/js/modules/prism/plugins/line-numbers/', 
+                    filter: 'isFile'    
                 },
             prismCss: {
-                    expand: true, flatten: true, src: ['bower_components/prism/themes/prism.css'], dest: '<%= globalConfig.src %>/css/modules/prism/', filter: 'isFile'                    
+                    expand: true, 
+                    flatten: true, 
+                    src: ['bower_components/prism/themes/prism.css'], 
+                    dest: '<%= globalConfig.src %>/css/modules/prism/', 
+                    filter: 'isFile'                    
                 },
             prismCssPlugin: {
-                    expand: true, flatten: true, src: ['bower_components/prism/plugins/line-numbers/prism-line-numbers.css'], dest: '<%= globalConfig.src %>/css/modules/prism/plugins/line-numbers/', filter: 'isFile'                    
+                    expand: true, 
+                    flatten: true, 
+                    src: ['bower_components/prism/plugins/line-numbers/prism-line-numbers.css'], 
+                    dest: '<%= globalConfig.src %>/css/modules/prism/plugins/line-numbers/', 
+                    filter: 'isFile'                    
                 },
             prismCssTheme: {
-                    expand: true, flatten: true, src: ['bower_components/prism/themes/prism-okaidia.css'], dest: '<%= globalConfig.src %>/css/modules/prism/', filter: 'isFile'    
+                    expand: true, 
+                    flatten: true, 
+                    src: ['bower_components/prism/themes/prism-okaidia.css'], 
+                    dest: '<%= globalConfig.src %>/css/modules/prism/', 
+                    filter: 'isFile'    
             }
         },
         /* = Task Config: Copy dependency files */
