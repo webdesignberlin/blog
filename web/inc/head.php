@@ -50,7 +50,7 @@
     <link rel="alternate" type="application/rss+xml" title="SITE NAME &raquo; Feed" href="http://www.DOMAIN.com/feed/" />
     <link rel="alternate" type="application/rss+xml" title="SITE NAME &raquo; Comments Feed" href="http://www.DOMAIN.com/comments/feed/" />
     <link rel="alternate" type="application/rss+xml" title="SITE NAME &raquo; TITLE Comments Feed" href="URL" />
-    <link rel='stylesheet' id='main-css'  href='assets/css/combine.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='main-css'  href='assets/css/main.min.css' type='text/css' media='all' />
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Domine:400,700' rel='stylesheet' type='text/css'>
     

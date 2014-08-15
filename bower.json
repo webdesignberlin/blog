@@ -1,18 +1,19 @@
 {
-  "name": "matze-blog",
-  "version": "1.0.0",
-  "authors": [
-    "Michael Gerstmann <m@seiler-gerstmann.de>"
-  ],
-  "private": true,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "devDependencies": {
-    "prism": "gh-pages"
-  }
+	"name": "matze-blog",
+	"version": "1.0.0",
+	"authors": [
+		"Michael Gerstmann <m@seiler-gerstmann.de>"
+	],
+	"private": true,
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	],
+	"devDependencies": {
+		"prism": "gh-pages",
+		"jquery": "~2.1.1"
+	}
 }
