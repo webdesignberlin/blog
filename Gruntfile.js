@@ -26,7 +26,7 @@ module.exports = function(grunt) {
         /* + Task Config: Clean */
         clean: {
             deps: [
-                ['<%= globalConfig.temp %>/']
+                ['<%= globalConfig.temp %>']
             ]
         },
         /* = Task Config: Clean */
