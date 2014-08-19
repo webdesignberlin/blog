@@ -199,7 +199,10 @@
             <ol><li id="#1"><a href="#note-1">1 http://clojure.org/</a></li></ol>
         </aside>  
             </div>
-
+        
+        <footer>    
+            <?php require('inc/comments.php'); ?>
+        </footer>
 
         </article>
 </main>
