@@ -12,22 +12,35 @@ module.exports = function(grunt) {
     };
     /* = Global Project Vars */
     
+    
     /* + Preparation */
     require('load-grunt-tasks')(grunt); // Load all grunt tasks matching the `grunt-*` pattern
     grunt.util.linefeed = '\n'; // Force use of Unix newlines
     /* = Preparation */
 
-    /* + Project Tasks */
-    
+
+    /* + Project Tasks */    
     grunt.initConfig({
         globalConfig: globalConfig, // include Global Config
         pkg: grunt.file.readJSON('package.json'), // Get npm package data
 
+
         /* + Task Config: Clean */
         clean: {
-            deps: [
+
+            // temporary files
+            temp: [
                 ['<%= globalConfig.temp %>']
+            ],
+
+            // dependencies / vendor folders
+            deps: [
+                ['<%= globalConfig.dest %>/js/vendor/**/*'],
+                ['<%= globalConfig.dest %>/css/vendor/**/*'],
+                ['<%= globalConfig.src %>/js/vendor/**/*'],
+                ['<%= globalConfig.src %>/css/vendor/**/*']
             ]
+
         },
         /* = Task Config: Clean */
 
@@ -301,6 +314,11 @@ module.exports = function(grunt) {
     grunt.registerTask( 'copy-deps', [
         'clean:deps',
         'copy'
+    ]);
+    
+    // clean temporary files/folders
+    grunt.registerTask( 'clean-temp', [
+        'clean:temp'
     ]);
 
     // process stylesheets
