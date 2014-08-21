@@ -223,7 +223,7 @@ module.exports = function(grunt) {
                     '<%= globalConfig.dest %>/js/main.min.js': [
                         '<%= globalConfig.src %>/js/main.js'
                     ]
-                },
+                }
             }
         },
         /* = Task Config: Uglify */
