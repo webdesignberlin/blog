@@ -15,7 +15,7 @@ Work in Progress
 
 | Parameter      | Task(s)               |
 |----------------|-----------------------|
-| `default`      | -> `build`
+| `default`      | `build`
 | `build`        | vollständiger Build-Job (`json_update`, `copy-deps`, `copy-css`, `copy-js`, `clean-temp`)
 | `copy-deps`    | löscht existierende Abhängigkeiten, kopiert Abhängigkeiten neu aus *bower_components*
 | `build-css`    | kompiliert SASS, fügt Vendor-Präfixe hinzu, kombiniert Media-Queries und konkateniert/minimiert CSS
