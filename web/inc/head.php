@@ -2,7 +2,7 @@
 <html lang="en-US" prefix="og: http://ogp.me/ns#">
 <head>
     <meta charset="utf-8">
-    <title>Artikel</title>
+    <title>[TODO->title] [TODO->cat]</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <!-- Favicon -->
