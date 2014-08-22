@@ -26,15 +26,15 @@
     </ol>
     <form class="comment-form">
         <label for="comment-name">Name</label>
-        <input type="text" name="comment-name" placeholder="Name (Pflichtfeld)">
+        <input type="text" name="comment-name" placeholder="Name (Pflichtfeld)" required>
         
         <label for="comment-email">E-Mail</label>
-        <input type="email" name="comment-email" placeholder="E-Mail (Pflichtfeld)">
+        <input type="email" name="comment-email" placeholder="E-Mail (Pflichtfeld)" required>
         
         <label for="comment-url">Website</label>
         <input type="url" name="comment-url" placeholder="Website">
         
         <label for="comment-text">Kommentar</label>
-        <textarea name="comment-text" placeholder="Kommentar (Pflichtfeld)"></textarea>
+        <textarea name="comment-text" placeholder="Kommentar (Pflichtfeld)" required></textarea>
     </form>
 </section>
