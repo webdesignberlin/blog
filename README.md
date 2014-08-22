@@ -1,7 +1,7 @@
 Blog
 ====
 
-*Work in Progress
+Work in Progress
 
 ## Inhalt
 
