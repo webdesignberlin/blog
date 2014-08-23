@@ -1,5 +1,5 @@
 <?php require('inc/head.php'); ?>
-<body class="single single-post postid-0 single-format-standard">
+<body>
     
     <?php require('inc/header.php'); ?>
     
