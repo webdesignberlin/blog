@@ -3,6 +3,7 @@
     <ol>
         <li class="comment" id="comment-01">
             <header class="comment-meta">
+                <img src="" alt="Kommentarverfasser Image">
                 von <b><a href="#">Kommentarverfasser</a></b> am <a href="#comment-01"><time datetime="2014-07-02T14:37:30+02:00">July 2nd, 2014 14:37</time></a>
             </header>
             <article class="comment-content">
@@ -14,6 +15,7 @@
         </li>
         <li class="comment" id="comment-02">
             <header class="comment-meta">
+                <img src="" alt="Kommentarverfasser Image">
                 von <b><a href="#">Kommentarverfasser 2</a></b> am <a href="#comment-02"><time datetime="2014-07-02T14:37:30+02:00">July 2nd, 2014 14:37</time></a>
             </header>
             <article class="comment-content">
