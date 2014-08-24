@@ -24,6 +24,20 @@
             <footer class="comment-footer">
                 <a href="#">Antworten</a>
             </footer>
+            <ul>
+                <li class="comment" id="sub-comment-01-02">
+                    <header class="comment-meta">
+                        <a href="#"><img src="" alt="Kommentarverfasser Image"></a>
+                        von <b><a href="#">Kommentarverfasser 3</a></b> am <a href="#sub-comment-01-02"><time datetime="2014-07-02T14:37:30+02:00">July 2nd, 2014 14:37</time></a>
+                    </header>
+                    <article class="comment-content">
+                        <p>Lorem Ipsum <em>Dolore</em> blubb keks banana.</p>
+                    </article>
+                    <footer class="comment-footer">
+                        <a href="#">Antworten</a>
+                    </footer>
+                </li>
+            </ul>
         </li>
     </ol>
     <form class="comment-form">
